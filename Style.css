@@ -37,6 +37,7 @@ h2 {
 label {
     display: block;
     font-weight: bold;
+    align-items: center;
 }
 
 input {
