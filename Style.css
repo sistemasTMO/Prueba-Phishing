@@ -11,6 +11,7 @@ body {
 header {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 15px;
+    text-align: center; /* Centrar el texto en el header */
 }
 
 .container {
@@ -22,6 +23,7 @@ header {
     border-radius: 10px;
     color: black;
     position: relative;
+    text-align: center; /* Centrar los textos dentro del contenedor */
 }
 
 /* Hacer el formulario más adaptable */
@@ -35,24 +37,29 @@ header {
 
 h2 {
     color: #333;
+    text-align: center; /* Centrar el texto del título */
 }
 
 .form-group {
     margin-bottom: 15px;
-    text-align: left;
+    text-align: center; /* Centrar los textos dentro de los grupos de formularios */
 }
 
 label {
     display: block;
     font-weight: bold;
+    text-align: center; /* Centrar las etiquetas */
 }
 
 input {
-    width: 95%;
+    width: 80%; /* Ajustar el ancho para centrar */
     padding: 8px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    display: block; /* Asegura que los inputs se comporten como bloque */
+    margin-left: auto;
+    margin-right: auto; /* Centrar los inputs */
 }
 
 .submit-btn {
@@ -62,6 +69,9 @@ input {
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* Centrar el botón */
 }
 
 .submit-btn:hover {
@@ -96,6 +106,9 @@ input {
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* Centrar el botón */
 }
 
 #closeModal:hover {
