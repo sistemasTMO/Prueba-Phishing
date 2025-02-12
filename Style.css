@@ -99,46 +99,51 @@ input {
     background-color: #0056b3;
 }
 
-/* Imágenes de los premios */
+/* ----------------------------- */
+/*      IMÁGENES DE PREMIOS      */
+/* ----------------------------- */
 .premio {
     transition: transform 0.3s ease-in-out;
     border-radius: 5px;
+    position: absolute;
 }
 
 .premio:hover {
     transform: scale(1.1);
 }
 
-/* Posicionamiento en pantallas grandes */
+/* Posicionamiento y tamaños en pantallas grandes */
 .premio1 {
-    position: absolute;
     bottom: 200px;
     right: 78%;
     width: 300px;
 } 
 
 .premio2 {
-    position: absolute;
     top: 50%;
     left: 83%;
     width: 170px;
 }
 
 .premio3 {
-    position: absolute;
     bottom: 1px;
     left: 10%;
     width: 100px;
 }
 
 /* ----------------------------- */
-/* RESPONSIVE DESIGN - ADAPTADO  */
+/*  RESPONSIVE DESIGN - ADAPTADO */
 /* ----------------------------- */
 @media screen and (max-width: 1024px) {
     .container {
         width: 70%;
         margin: 40px auto;
     }
+
+    /* Ajustar tamaño de las imágenes en tablets */
+    .premio1 { width: 250px; right: 70%; bottom: 180px; }
+    .premio2 { width: 150px; left: 75%; top: 45%; }
+    .premio3 { width: 80px; left: 15%; bottom: 10px; }
 }
 
 @media screen and (max-width: 768px) {
@@ -148,19 +153,10 @@ input {
         padding: 15px;
     }
 
-    /* Ajuste de imágenes de los premios */
-    .premio {
-        position: static;
-        display: block;
-        margin: 10px auto;
-        width: 90%;
-        max-width: 200px;
-    }
-
-    .premio1, .premio2, .premio3 {
-        width: 90%;
-        max-width: 250px;
-    }
+    /* Reducir aún más en pantallas medianas */
+    .premio1 { width: 200px; right: 65%; bottom: 160px; }
+    .premio2 { width: 130px; left: 70%; top: 42%; }
+    .premio3 { width: 70px; left: 18%; bottom: 5px; }
 
     header nav h1 {
         font-size: 1.2rem;
@@ -197,4 +193,9 @@ input {
     .modal-content {
         width: 90%;
     }
+
+    /* Ajustar tamaños para celulares */
+    .premio1 { width: 150px; right: 60%; bottom: 120px; }
+    .premio2 { width: 100px; left: 65%; top: 40%; }
+    .premio3 { width: 60px; left: 20%; bottom: 3px; }
 }
