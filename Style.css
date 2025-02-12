@@ -95,20 +95,18 @@ input {
 
 /* Estilos para las imágenes de los premios */
 .premio {
-    /* width: 250px; */
     position: absolute;
     transition: transform 0.3s ease-in-out;
-    border-radius: 5px
+    border-radius: 5px;
 }
 
 .premio:hover {
     transform: scale(1.1);
 }
 
-/* Posiciones de las imágenes */
+/* Posiciones de las imágenes en escritorio */
 .premio1 {
     bottom: 200px;
-    /* left: 5%; */
     right: 78%;
     width: 300px;
 } 
@@ -123,4 +121,45 @@ input {
     bottom: 1px;
     left: 10%;
     width: 100px;
+}
+
+/* ------------------------- */
+/* RESPONSIVE DESIGN - MÓVIL */
+/* ------------------------- */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin: 30px auto;
+        padding: 15px;
+    }
+
+    .premio {
+        position: static;
+        display: block;
+        margin: 10px auto;
+        width: 90%;
+        max-width: 200px;
+    }
+
+    .premio1, .premio2, .premio3 {
+        width: 90%;
+        max-width: 250px;
+    }
+
+    header nav h1 {
+        font-size: 1.2rem;
+    }
+
+    header nav p {
+        font-size: 0.9rem;
+    }
+
+    input {
+        font-size: 1rem;
+    }
+
+    .submit-btn {
+        font-size: 1rem;
+        padding: 12px;
+    }
 }
