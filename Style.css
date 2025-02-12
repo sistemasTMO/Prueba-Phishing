@@ -117,26 +117,26 @@ input {
 .premio1 {
     bottom: 50%;
     left: 5%;
-    width: 250px;
+    width: 100px;
 }
 
 .premio2 {
     top: 50%;
     right: 5%;
-    width: 200px;
+    width: 90px;
 }
 
 .premio3 {
     bottom: 10%;
     left: 10%;
     transform: translateX(-50%);
-    width: 150px;
+    width: 50px;
 }
 
 /* Ajuste de imágenes en dispositivos móviles */
 @media (max-width: 768px) {
     .premio {
-        width: 15%; /* Se ajustan automáticamente */
+        width: 30%; /* Se ajustan automáticamente */
     }
     .premio1 {
         bottom: 55%;
