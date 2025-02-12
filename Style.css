@@ -135,19 +135,19 @@ input {
 
 /* Tamaños específicos */
 .image-gallery figure:nth-child(1) img {
-    width: 300px; /* Imagen más grande */
+    width: 320px; /* Imagen más grande */
     height: auto;
     object-fit: contain;
 }
 
 .image-gallery figure:nth-child(2) img {
-    width: 200px; /* Imagen mediana */
+    width: 120px; /* Imagen mediana */
     height: auto;
     object-fit: contain;
 }
 
 .image-gallery figure:nth-child(3) img {
-    width: 150px; /* Imagen pequeña */
+    width: 100px; /* Imagen pequeña */
     height: auto;
     object-fit: contain;
 }
