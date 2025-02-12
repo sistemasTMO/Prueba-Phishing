@@ -154,9 +154,9 @@ input {
     }
 
     /* Reducir aún más en pantallas medianas */
-    .premio1 { width: 200px; right: 65%; bottom: 160px; }
-    .premio2 { width: 130px; left: 70%; top: 42%; }
-    .premio3 { width: 70px; left: 18%; bottom: 5px; }
+    .premio1 { width: 100px; right: 65%; bottom: 160px; }
+    .premio2 { width: 90px; left: 70%; top: 42%; }
+    .premio3 { width: 50px; left: 18%; bottom: 5px; }
 
     header nav h1 {
         font-size: 1.2rem;
