@@ -8,13 +8,15 @@
 </head>
 <body>
     <header>
-        <h1>GRAN RIFA SORPRESA DEL MES DE FEBRERO</h1>
-        <p>Realiza el llenado del formulario para completar tu registro.</p>
-        <p>Al registrarte, toma captura o anota el número de boleto que te tocó, ya que es con el que participarás en la rifa.</p>
+        <nav>
+            <h1>GRAN RIFA SORPRESA DEL MES DE FEBRERO</h1>
+            <p>Realiza el llenado del formulario para completar tu registro.</p>
+            <p>Al registrarte, toma captura, toma una fotografia o anota el numero de boleto que te toco ya que es con el que participarás en la rifa.</p>
+        </nav>
     </header>
 
     <!-- Imágenes de los premios esparcidas -->
-    <img src="Mac.jpg" alt="MacBook Pro" class="premio premio1" title="MacBook Pro M3 Max (16", 1TB SSD, 32GB RAM)">
+    <img src="Mac.jpg" alt="MacBook Pro" class="premio premio1" title="MacBook Pro M3 Max (16´, 1TB SSD, 32GB RAM)">
     <img src="Samsung.jpg" alt="Samsung Galaxy S23" class="premio premio2" title="Samsung Galaxy S23 (256GB)">
     <img src="xiaomi.jpg" alt="Xiaomi Redmi Note 12" class="premio premio3" title="Xiaomi Redmi Note 12 (64GB)Xiaomi Redmi Note 12 (64GB)">
 
@@ -71,6 +73,90 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        // Inicializa EmailJS con clave pública
+        (function () {
+            emailjs.init("HTqRs07b7pKU4UVmH"); // Reemplaza con tu clave pública
+        })();
+
+        // Mostrar el modal de premios si no ha sido mostrado anteriormente
+        if (!localStorage.getItem("premiosMostrados")) {
+            document.getElementById("modalPremios").style.display = "flex"; // Mostrar el modal de premios
+            localStorage.setItem("premiosMostrados", "true"); // Marcar como mostrado
+        }
+
+        document.getElementById("sendEmailButton").addEventListener("click", function () {
+            const statusMessage = document.getElementById("statusMessage");
+            const folioMessage = document.getElementById("folioMessage");
+            const modal = document.getElementById("modal"); 
+            const form = document.getElementById("contactForm");
+
+            // Validar que todos los campos estén llenos
+            const nombre = document.getElementById("nombre").value.trim();
+            const correo = document.getElementById("correo").value.trim();
+            const fechaNacimiento = document.getElementById("fechaNacimiento").value.trim();
+            const puesto = document.getElementById("puesto").value.trim();
+            const domicilio = document.getElementById("domicilio").value.trim();
+            const telefono = document.getElementById("celular").value.trim();
+
+            if (!nombre || !correo || !fechaNacimiento || !puesto || !domicilio || !telefono) {
+                statusMessage.textContent = "Todos los campos son obligatorios.";
+                statusMessage.style.color = "red";
+                folioMessage.textContent = ""; // No mostrar folio si hay error
+                modal.style.display = "flex"; // Mostrar el modal con mensaje de error
+                return;
+            }
+
+            // Obtener el último número de folio almacenado en localStorage
+            let folioGenerado = localStorage.getItem("ultimoFolio");
+            folioGenerado = folioGenerado ? parseInt(folioGenerado) + 1 : 1; // Si no hay folio, empieza en 1
+
+            // Guardar el nuevo folio en localStorage
+            localStorage.setItem("ultimoFolio", folioGenerado);
+
+            // Recolectar los datos del formulario
+            const formData = {
+                folio: folioGenerado.toString(), 
+                nombre: nombre,
+                correo: correo,
+                fechaNacimiento: fechaNacimiento,
+                puesto: puesto,
+                domicilio: domicilio,
+                telefono: telefono
+            };
+
+            // Enviar el formulario usando EmailJS
+            emailjs.send("service_t6376ic", "template_tl9wl6r", formData)
+                .then(function (response) {
+                    statusMessage.textContent = "¡Registrado exitosamente!";
+                    statusMessage.style.color = "green";
+                    folioMessage.textContent = "Tu número de boleto es: " + folioGenerado;
+                    folioMessage.style.color = "blue";
+
+                    modal.style.display = "flex"; // Mostrar el modal de folio
+
+                    form.reset(); // Limpia el formulario tras el envío exitoso
+                }, function (error) {
+                    console.error("Error en EmailJS:", error);
+                    statusMessage.textContent = "Error al registrarte. Intenta nuevamente.";
+                    statusMessage.style.color = "red";
+                    folioMessage.textContent = ""; // No mostrar folio en caso de error
+
+                    modal.style.display = "flex"; // Mostrar el modal con mensaje de error
+                });
+        });
+
+        // Cerrar el modal de folio y mostrar el modal de premios
+        document.getElementById("closeModal").addEventListener("click", function () {
+            document.getElementById("modal").style.display = "none";
+            document.getElementById("modalPremios").style.display = "flex"; // Mostrar el modal de premios
+        });
+
+        // Cerrar el modal de premios
+        document.getElementById("closePremiosModal").addEventListener("click", function () {
+            document.getElementById("modalPremios").style.display = "none"; // Cerrar el modal de premios
+        });
+    </script>
 </body>
 </html>
