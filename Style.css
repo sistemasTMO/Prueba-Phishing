@@ -114,3 +114,28 @@ input {
 #closeModal:hover {
     background-color: #0056b3;
 }
+
+/* Estilos para la galería de imágenes */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrar las imágenes */
+    gap: 10px; /* Espacio entre las imágenes */
+}
+
+.image-gallery img {
+    width: 15%; /* Ajusta el tamaño de cada imagen */
+    object-fit: cover; /* Para que la imagen no se distorsione */
+}
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 768px) {
+    .image-gallery img {
+        width: 32%; /* Ajusta el tamaño de las imágenes en dispositivos móviles */
+    }
+
+    /* Limita la visibilidad a solo las primeras tres imágenes en pantallas pequeñas */
+    .image-gallery img:nth-child(n+4) {
+        display: none; /* Oculta imágenes a partir de la cuarta */
+    }
+}
