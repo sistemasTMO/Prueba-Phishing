@@ -102,7 +102,7 @@ input {
     background-color: #0056b3;
 }
 
-/* Estilos para las imágenes de los premios */
+/* Estilos para las imágenes de los premios
 .premio {
     position: absolute;
     transition: transform 0.3s ease-in-out;
@@ -114,7 +114,7 @@ input {
 }
 
 /* Ajuste de tamaño para cada imagen en pantalla grande */
-.premio1 {
+/* .premio1 {
     bottom: 50%;
     left: 5%;
     width: 250px;
@@ -134,10 +134,10 @@ input {
 }
 
 /* Ajuste de imágenes en dispositivos móviles */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .premio {
         width: 30%; /* Se ajustan automáticamente */
-    }
+    /* }
     .premio1 {
         bottom: 55%;
         left: 2%;
@@ -151,4 +151,4 @@ input {
         left: 50%;
         transform: translateX(-50%);
     }
-}
+}  */ 
