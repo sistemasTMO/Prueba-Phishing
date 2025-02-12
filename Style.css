@@ -141,13 +141,13 @@ input {
 }
 
 .image-gallery figure:nth-child(2) img {
-    width: 120px; /* Imagen mediana */
+    width: 127px; /* Imagen mediana */
     height: auto;
     object-fit: contain;
 }
 
 .image-gallery figure:nth-child(3) img {
-    width: 100px; /* Imagen pequeña */
+    width: 120px; /* Imagen pequeña */
     height: auto;
     object-fit: contain;
 }
