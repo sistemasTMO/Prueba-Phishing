@@ -103,16 +103,29 @@
                 return;
             }
 
-            // Obtener el último número de folio almacenado en localStorage
-            let folioGenerado = localStorage.getItem("ultimoFolio");
-            folioGenerado = folioGenerado ? parseInt(folioGenerado) + 1 : 1; // Si no hay folio, empieza en 1
+            // Función para generar un número de folio único entre 1 y 1000
+            function generarFolioUnico() {
+                let folioGenerado;
+                let foliosUsados = JSON.parse(localStorage.getItem("foliosUsados")) || [];
 
-            // Guardar el nuevo folio en localStorage
-            localStorage.setItem("ultimoFolio", folioGenerado);
+                do {
+                    folioGenerado = Math.floor(Math.random() * 1000) + 1; // Número aleatorio entre 1 y 1000
+                } while (foliosUsados.includes(folioGenerado));
+
+                // Guardar el folio como utilizado
+                foliosUsados.push(folioGenerado);
+                localStorage.setItem("foliosUsados", JSON.stringify(foliosUsados));
+
+                // Formatear el folio a 4 caracteres (añadir ceros a la izquierda si es necesario)
+                return folioGenerado.toString().padStart(4, '0');
+            }
+
+            // Generar un folio único
+            const folioGenerado = generarFolioUnico();
 
             // Recolectar los datos del formulario
             const formData = {
-                folio: folioGenerado.toString(), 
+                folio: folioGenerado, 
                 nombre: nombre,
                 correo: correo,
                 fechaNacimiento: fechaNacimiento,
