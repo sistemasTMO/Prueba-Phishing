@@ -6,7 +6,6 @@ body {
     color: white;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Evita desplazamiento horizontal */
 }
 
 header {
@@ -23,7 +22,15 @@ header {
     border-radius: 10px;
     color: black;
     position: relative;
-    max-width: 600px;
+}
+
+/* Hacer el formulario más adaptable */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Ajustar ancho en dispositivos pequeños */
+        margin: 20px auto;
+        padding: 15px;
+    }
 }
 
 h2 {
@@ -42,22 +49,19 @@ label {
 
 input {
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1rem;
 }
 
 .submit-btn {
     background-color: #28a745;
     color: white;
     border: none;
-    padding: 12px;
+    padding: 10px;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 1rem;
-    width: 100%;
 }
 
 .submit-btn:hover {
@@ -83,8 +87,6 @@ input {
     border-radius: 10px;
     text-align: center;
     color: black;
-    width: 80%;
-    max-width: 400px;
 }
 
 #closeModal {
@@ -100,103 +102,53 @@ input {
     background-color: #0056b3;
 }
 
-/* ----------------------------- */
-/*      IMÁGENES DE PREMIOS      */
-/* ----------------------------- */
+/* Estilos para las imágenes de los premios */
 .premio {
+    position: absolute;
     transition: transform 0.3s ease-in-out;
     border-radius: 5px;
-    position: absolute;
 }
 
-/* Evitar que las imágenes se sobrepongan con el formulario */
+.premio:hover {
+    transform: scale(1.1);
+}
+
+/* Ajuste de tamaño para cada imagen en pantalla grande */
 .premio1 {
-    width: 25%;
-    max-width: 220px;
-    top: 10%;
+    bottom: 50%;
     left: 5%;
+    width: 250px;
 }
 
 .premio2 {
-    width: 20%;
-    max-width: 180px;
-    top: 50%;
+    top: 20%;
     right: 5%;
+    width: 200px;
 }
 
 .premio3 {
-    width: 15%;
-    max-width: 150px;
-    bottom: 5%;
+    bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
+    width: 150px;
 }
 
-/* ----------------------------- */
-/*  RESPONSIVE DESIGN - ADAPTADO */
-/* ----------------------------- */
-@media screen and (max-width: 1024px) {
-    .container {
-        width: 70%;
-        margin: 40px auto;
+/* Ajuste de imágenes en dispositivos móviles */
+@media (max-width: 768px) {
+    .premio {
+        width: 30%; /* Se ajustan automáticamente */
     }
-
-    /* Ajustar tamaño de las imágenes en tablets */
-    .premio1 { width: 20%; left: 3%; }
-    .premio2 { width: 18%; right: 3%; }
-    .premio3 { width: 12%; bottom: 5%; }
-}
-
-@media screen and (max-width: 768px) {
-    .container {
-        width: 90%;
-        margin: 30px auto;
-        padding: 15px;
+    .premio1 {
+        bottom: 55%;
+        left: 2%;
     }
-
-    /* Reducir aún más en pantallas medianas */
-    .premio1 { width: 18%; left: 2%; }
-    .premio2 { width: 16%; right: 2%; }
-    .premio3 { width: 10%; bottom: 3%; }
-
-    header nav h1 {
-        font-size: 1.2rem;
+    .premio2 {
+        top: 15%;
+        right: 2%;
     }
-
-    header nav p {
-        font-size: 0.9rem;
+    .premio3 {
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
     }
-
-    input {
-        font-size: 1rem;
-    }
-
-    .submit-btn {
-        font-size: 1rem;
-        padding: 12px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .container {
-        width: 95%;
-        padding: 10px;
-    }
-
-    header nav h1 {
-        font-size: 1rem;
-    }
-
-    header nav p {
-        font-size: 0.8rem;
-    }
-
-    .modal-content {
-        width: 90%;
-    }
-
-    /* Ajustar tamaños para celulares */
-    .premio1 { width: 15%; left: 1%; }
-    .premio2 { width: 14%; right: 1%; }
-    .premio3 { width: 8%; bottom: 2%; }
 }
