@@ -137,7 +137,7 @@ input {
 .image-gallery figcaption {
     margin-top: 8px;
     font-size: 14px;
-    color: #666; /* Color gris para el pie de imagen */
+    color: #000000; /* Color gris para el pie de imagen */
     text-align: center; /* Centrar el texto del pie de foto */
 }
 
