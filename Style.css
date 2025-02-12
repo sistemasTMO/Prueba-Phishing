@@ -136,7 +136,7 @@ input {
 /* Ajuste de imágenes en dispositivos móviles */
 @media (max-width: 768px) {
     .premio {
-        width: 30%; /* Se ajustan automáticamente */
+        width: 15%; /* Se ajustan automáticamente */
     }
     .premio1 {
         bottom: 55%;
