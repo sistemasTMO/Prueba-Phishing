@@ -6,6 +6,7 @@ body {
     color: white;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Evita desplazamiento horizontal */
 }
 
 header {
@@ -16,7 +17,7 @@ header {
 .container {
     background: white;
     padding: 20px;
-    width: 55%;
+    width: 50%;
     margin: 50px auto;
     box-shadow: 0px 0px 10px gray;
     border-radius: 10px;
@@ -37,17 +38,15 @@ h2 {
 label {
     display: block;
     font-weight: bold;
-    align-items: center;
 }
 
 input {
-    width: 80%;
+    width: 100%;
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
-    align-items: center;
 }
 
 .submit-btn {
@@ -110,27 +109,27 @@ input {
     position: absolute;
 }
 
-.premio:hover {
-    transform: scale(1.1);
+/* Evitar que las imágenes se sobrepongan con el formulario */
+.premio1 {
+    width: 25%;
+    max-width: 220px;
+    top: 10%;
+    left: 5%;
 }
 
-/* Posicionamiento y tamaños en pantallas grandes */
-.premio1 {
-    bottom: 200px;
-    right: 78%;
-    width: 300px;
-} 
-
 .premio2 {
+    width: 20%;
+    max-width: 180px;
     top: 50%;
-    left: 83%;
-    width: 170px;
+    right: 5%;
 }
 
 .premio3 {
-    bottom: 1px;
-    left: 10%;
-    width: 100px;
+    width: 15%;
+    max-width: 150px;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* ----------------------------- */
@@ -138,27 +137,27 @@ input {
 /* ----------------------------- */
 @media screen and (max-width: 1024px) {
     .container {
-        width: 75%;
+        width: 70%;
         margin: 40px auto;
     }
 
     /* Ajustar tamaño de las imágenes en tablets */
-    .premio1 { width: 250px; right: 70%; bottom: 180px; }
-    .premio2 { width: 150px; left: 75%; top: 45%; }
-    .premio3 { width: 80px; left: 15%; bottom: 10px; }
+    .premio1 { width: 20%; left: 3%; }
+    .premio2 { width: 18%; right: 3%; }
+    .premio3 { width: 12%; bottom: 5%; }
 }
 
 @media screen and (max-width: 768px) {
     .container {
-        width: 95%;
+        width: 90%;
         margin: 30px auto;
         padding: 15px;
     }
 
     /* Reducir aún más en pantallas medianas */
-    .premio1 { width: 100px; right: 65%; bottom: 160px; }
-    .premio2 { width: 90px; left: 70%; top: 42%; }
-    .premio3 { width: 50px; left: 18%; bottom: 5px; }
+    .premio1 { width: 18%; left: 2%; }
+    .premio2 { width: 16%; right: 2%; }
+    .premio3 { width: 10%; bottom: 3%; }
 
     header nav h1 {
         font-size: 1.2rem;
@@ -180,7 +179,7 @@ input {
 
 @media screen and (max-width: 480px) {
     .container {
-        width: 97%;
+        width: 95%;
         padding: 10px;
     }
 
@@ -197,7 +196,7 @@ input {
     }
 
     /* Ajustar tamaños para celulares */
-    .premio1 { width: 150px; right: 60%; bottom: 120px; }
-    .premio2 { width: 100px; left: 65%; top: 40%; }
-    .premio3 { width: 60px; left: 20%; bottom: 3px; }
+    .premio1 { width: 15%; left: 1%; }
+    .premio2 { width: 14%; right: 1%; }
+    .premio3 { width: 8%; bottom: 2%; }
 }
