@@ -46,6 +46,7 @@ input {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
+    align-items: center;
 }
 
 .submit-btn {
