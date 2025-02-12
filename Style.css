@@ -119,19 +119,37 @@ input {
 .image-gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centrar las imágenes */
-    gap: 10px; /* Espacio entre las imágenes */
+    justify-content: center;
+    gap: 10px;
 }
 
 .image-gallery figure {
-    width: 30%; /* Ajusta el tamaño de cada figura */
+    text-align: center;
     margin: 0;
-    text-align: center; /* Centrar la imagen y el pie de foto */
 }
 
 .image-gallery img {
-    width: 100%; /* Hace que la imagen ocupe el 100% del contenedor */
+    width: 100%;
     object-fit: cover; /* Para que la imagen no se distorsione */
+}
+
+/* Tamaños específicos */
+.image-gallery figure:nth-child(1) img {
+    width: 300px; /* Imagen más grande */
+    height: auto;
+    object-fit: contain;
+}
+
+.image-gallery figure:nth-child(2) img {
+    width: 200px; /* Imagen mediana */
+    height: auto;
+    object-fit: contain;
+}
+
+.image-gallery figure:nth-child(3) img {
+    width: 150px; /* Imagen pequeña */
+    height: auto;
+    object-fit: contain;
 }
 
 .image-gallery figcaption {
